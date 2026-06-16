@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+
+body {
+  background: var(--cream);
+  color: var(--charcoal);
+  font-family: var(--body-font);
+  overflow-x: hidden;
+}
+
+#root {
+  position: relative;
+  isolation: isolate;
+}
+
+.site-wallpaper {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.site-wallpaper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .1;
+  filter: saturate(.82) contrast(.92);
+  transform: scale(1.04);
+}
+
+.site-wallpaper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(247,244,239,.82), rgba(247,244,239,.88)),
+    radial-gradient(ellipse at 20% 0%, rgba(255,255,255,.72), transparent 48%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+.romantic-link {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.65),
+    0 10px 24px rgba(61,59,60,.055);
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    background .25s ease,
+    box-shadow .25s ease;
+}
+
+.romantic-link::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  z-index: -1;
+  border-radius: inherit;
+  background:
+    linear-gradient(120deg, rgba(255,255,255,.5), rgba(168,184,160,.16) 52%, transparent 78%),
+    radial-gradient(ellipse at 20% 10%, rgba(255,255,255,.38), transparent 42%);
+  opacity: .72;
+}
+
+.romantic-link.is-pink {
+  border-color: rgba(216,167,177,.48);
+  background: rgba(216,167,177,.82);
+  color: white;
+}
+
+.romantic-link.is-sage {
+  border-color: rgba(168,184,160,.58);
+  background: rgba(221,228,210,.76);
+  color: var(--charcoal);
+}
+
+.romantic-link.is-paper {
+  border-color: rgba(168,184,160,.45);
+  background: rgba(255,255,255,.58);
+  color: rgba(61,59,60,.86);
+}
+
+.romantic-link.is-pink::before,
+.romantic-link.is-sage::before,
+.romantic-link.is-paper::before {
+  background:
+    linear-gradient(120deg, rgba(255,255,255,.54), transparent 62%),
+    radial-gradient(ellipse at 22% 12%, rgba(255,255,255,.42), transparent 44%);
+}
+
+.romantic-link::after {
+  content: "";
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  bottom: .55rem;
+  height: 1px;
+  z-index: -1;
+  background: linear-gradient(90deg, transparent, rgba(196,123,92,.44), transparent);
+  opacity: 0;
+  transform: scaleX(.72);
+  transition:
+    opacity .25s ease,
+    transform .25s ease;
+}
+
+.romantic-link.is-sage::after {
+  background: linear-gradient(90deg, transparent, rgba(168,184,160,.72), transparent);
+}
+
+.romantic-link:hover,
+.romantic-link:focus-visible {
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.72),
+    0 16px 34px rgba(61,59,60,.08);
+  outline: none;
+}
+
+.romantic-link:hover::after,
+.romantic-link:focus-visible::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.label-button {
+  border-radius: 14px 18px 14px 18px;
+}
+
+.paper-tag {
+  border-radius: 10px 14px 10px 14px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.62),
+    0 7px 16px rgba(61,59,60,.035);
+}
+
+img {
+  max-width: 100%;
+}
+
+section {
+  position: relative;
+  z-index: 1;
+  width: min(1200px, 90%);
+  margin: auto;
+}
+
+.container {
+    width: min(1200px, 90%);
+    margin: 0 auto;
+}

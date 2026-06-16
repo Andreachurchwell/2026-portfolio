@@ -1,0 +1,18 @@
+:root {
+
+  /* Colors */
+  --cream: #F7F4EF;
+  --charcoal: #3D3B3C;
+
+  --rose: #D8A7B1;
+  --sage: #A8B8A0;
+  --terracotta: #C47B5C;
+  --lavender: #D9D0E8;
+
+  /* Fonts */
+  --heading-font: "Cormorant Garamond", serif;
+  --body-font: "Manrope", sans-serif;
+
+  /* Width */
+  --max-width: 1200px;
+}
