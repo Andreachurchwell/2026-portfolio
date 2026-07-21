@@ -60,7 +60,7 @@ function Projects() {
                     <StackList items={stack.ourDoor} />
 
                     <div className="project-links">
-                        <a href="https://sampom.me" target="_blank" rel="noreferrer" className="romantic-link label-button is-pink">
+                        <a href="https://ourdoor.sampom.me" target="_blank" rel="noreferrer" className="romantic-link label-button is-pink">
                             Coming Soon
                         </a>
                         <a href="https://github.com/SamPomeroy/our-door" target="_blank" rel="noreferrer" className="romantic-link label-button is-sage">
