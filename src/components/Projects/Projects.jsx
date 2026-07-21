@@ -61,7 +61,7 @@ function Projects() {
 
                     <div className="project-links">
                         <a href="https://ourdoor.sampom.me" target="_blank" rel="noreferrer" className="romantic-link label-button is-pink">
-                            Coming Soon
+                            Our Door
                         </a>
                         <a href="https://github.com/SamPomeroy/our-door" target="_blank" rel="noreferrer" className="romantic-link label-button is-sage">
                             GitHub Repository
