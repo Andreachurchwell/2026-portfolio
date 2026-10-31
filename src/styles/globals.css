@@ -170,3 +170,24 @@ section {
     width: min(1200px, 90%);
     margin: 0 auto;
 }
+
+
+/* Shared finishing details and accessible interactions. */
+:root { --terracotta: #98543b; }
+::selection { background: #e8cbd2; color: #3d3b3c; }
+body { line-height: 1.6; }
+.romantic-link.is-pink { color: #482e35; }
+a:focus-visible, .romantic-link:focus-visible, nav a:focus-visible {
+  outline: 2px solid #784333;
+  outline-offset: 5px;
+}
+.skip-link { position: fixed; top: 1rem; left: 1rem; z-index: 100; padding: .8rem 1.2rem; background: var(--cream); border: 2px solid var(--terracotta); border-radius: 8px; transform: translateY(-180%); }
+.skip-link:focus { transform: translateY(0); }
+.site-footer { width: min(1200px, 90%); margin: auto; padding: 2rem 0; border-top: 1px solid #d9d7ce; display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; font-size: .85rem; }
+.site-footer > a:first-child { font-family: var(--heading-font); font-size: 1.5rem; font-weight: 600; }
+@media (max-width: 600px) { .site-footer { flex-direction: column; gap: .6rem; text-align: center; } }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+

@@ -46,3 +46,16 @@ nav a:hover::after,
 nav a:focus-visible::after{
     width:100%;
 }
+
+
+nav { justify-content: space-between; border-bottom: 1px solid rgba(168,184,160,.35); padding: 1.15rem 0; gap: 1rem; }
+nav .nav-brand { font-family: var(--heading-font); font-size: 2.8rem; font-weight: 600; line-height: 1; letter-spacing: -.06em; }
+.nav-brand span { color: var(--terracotta); }
+nav ul { gap: clamp(.8rem, 3vw, 2rem); }
+nav ul a { min-height: 44px; align-items: center; font-size: .9rem; }
+@media (max-width: 460px) {
+  nav { align-items: flex-start; }
+  nav ul { flex-wrap: wrap; justify-content: flex-end; gap: 0 1.1rem; max-width: 255px; }
+  nav ul a { font-size: .82rem; }
+}
+

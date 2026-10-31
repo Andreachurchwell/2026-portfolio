@@ -1,6 +1,6 @@
 import "./Hero.css";
 import { motion } from "framer-motion";
-import botanicalWallpaper from "../../assets/botanical-wallpaper.png";
+import botanicalWallpaper from "../../assets/botanical-wallpaper.webp";
 
 
 function Hero() {
@@ -15,7 +15,7 @@ function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: .6 }}
                 >
-                    Hello, I'm
+                    SOFTWARE · DATA · CURIOSITY
                 </motion.p>
 
                 <motion.h1
@@ -31,7 +31,7 @@ function Hero() {
                     animate={{ opacity: 1 }}
                     transition={{ delay: .4 }}
                 >
-                    Always learning, always creating.
+                    Thoughtful software. A human perspective.
                 </motion.h2>
 
                 <motion.p
@@ -40,15 +40,17 @@ function Hero() {
                     animate={{ opacity: 1 }}
                     transition={{ delay: .8 }}
                 >
-                    From healthcare to software, I've found joy in building
-                    things that help people understand, explore, and grow
-                    with confidence.
+                    I’m Andrea — a builder with a background in healthcare and a love
+                    for software, data, and AI. I create tools that help people
+                    learn, explore, and make sense of what matters.
                 </motion.p>
+
+                <p className="hero-skills">React <span>·</span> Python <span>·</span> Data analysis <span>·</span> AI applications</p>
 
                 <div className="buttons">
 
                     <a href="#projects" className="hero-button romantic-link label-button is-pink">
-                        View Projects
+                        Explore my work ↗
                     </a>
 
                     <a href="#contact" className="hero-button outline romantic-link label-button is-sage">
@@ -58,13 +60,15 @@ function Hero() {
                 </div>
 
             </div>
-            <div className="hero-image botanical-wallpaper" aria-label="Decorative botanical wallpaper artwork">
+            <div className="hero-image botanical-wallpaper" aria-hidden="true">
 
                 <img
                     src={botanicalWallpaper}
-                    alt="Vintage botanical wallpaper with watercolor flowers and leaves"
+                    alt=""
+                    fetchPriority="high"
                     className="botanical-print"
                 />
+                <div className="hero-art-note"><span>A little curiosity goes a long way.</span><p>Always learning.<br />Always creating.</p><span>Andrea Churchwell · Selected work</span></div>
 
             </div>
 

@@ -33,7 +33,7 @@ function MouseRibbon() {
 
     useEffect(() => {
         const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-        const isFinePointer = window.matchMedia("(pointer: fine)");
+        const isFinePointer = window.matchMedia("(pointer: fine) and (min-width: 901px)");
 
         if (prefersReducedMotion.matches || !isFinePointer.matches) {
             return undefined;
@@ -51,13 +51,18 @@ function MouseRibbon() {
                 y: event.clientY,
                 active: true,
             };
+            if (frameRef.current === null) frameRef.current = requestAnimationFrame(animate);
         };
 
         const handlePointerLeave = () => {
             targetRef.current.active = false;
+            if (frameRef.current !== null) cancelAnimationFrame(frameRef.current);
+            frameRef.current = null;
+            pathRefs.current.forEach((path) => path?.setAttribute("d", ""));
         };
 
         const animate = () => {
+            frameRef.current = null;
             const points = pointsRef.current;
             const target = targetRef.current;
 
@@ -78,12 +83,12 @@ function MouseRibbon() {
                 }
             });
 
-            frameRef.current = requestAnimationFrame(animate);
+            const moving = points.some((point) => Math.abs(point.x - target.x) + Math.abs(point.y - target.y) > 0.1);
+            if (target.active && moving) frameRef.current = requestAnimationFrame(animate);
         };
 
         window.addEventListener("pointermove", handlePointerMove);
         document.documentElement.addEventListener("pointerleave", handlePointerLeave);
-        frameRef.current = requestAnimationFrame(animate);
 
         return () => {
             window.removeEventListener("pointermove", handlePointerMove);

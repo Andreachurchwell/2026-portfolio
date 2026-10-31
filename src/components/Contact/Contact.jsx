@@ -45,7 +45,7 @@ function Contact() {
                 </a>
 
                 <a
-                    href="/Andrea-Churchwell-Resume.pdf"
+                    href={`${import.meta.env.BASE_URL}Andrea-Churchwell-Resume.pdf`}
                     download
                     className="contact-link resume-link romantic-link label-button is-sage"
                 >
